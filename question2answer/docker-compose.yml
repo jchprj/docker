@@ -1,0 +1,19 @@
+question2answer:
+    image: wiesom/question2answer
+    links:
+        - db:mysql
+    ports:
+     - "805:80"
+    environment:
+        QUESTION2ANSWER_DB_USER: root
+        QUESTION2ANSWER_DB_PASSWORD: 123456
+        QUESTION2ANSWER_DB_NAME: question2answer
+
+
+db:
+    image: mysql:5.6.35
+    environment:
+        MYSQL_USER: root
+        MYSQL_PASSWORD: 123456
+        MYSQL_DATABASE: question2answer
+        MYSQL_ROOT_PASSWORD: 123456
