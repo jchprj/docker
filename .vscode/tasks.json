@@ -1,0 +1,32 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build image",
+            "type": "shell",
+            "command": "cmd",
+            "args": [
+                "/C",
+                "${workspaceFolder}/build.cmd",
+                "${relativeFile}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "echo",
+            "type": "shell",
+            "command": "echo",
+            "args": [
+                "${workspaceFolder}/build.cmd",
+                "${relativeFile}"
+            ],
+            "problemMatcher": []
+        }
+    ]
+}
