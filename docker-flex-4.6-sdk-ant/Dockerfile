@@ -18,3 +18,5 @@ RUN \
     rmdir /ant/apache-ant-1.10.5 && \
     rm /ant/manual -rf && \
     apk add --update git
+
+ADD ecj-4.6.1.jar /ant/lib/
