@@ -11,12 +11,24 @@
                 "/C",
                 "${workspaceFolder}/build.cmd",
                 "${relativeFile}", 
-                "latest"
+                "1"
             ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
+            "problemMatcher": []
+        },
+        {
+            "label": "build image with tag",
+            "type": "shell",
+            "command": "cmd",
+            "args": [
+                "/C",
+                "${workspaceFolder}/build.cmd",
+                "${relativeFile}", 
+                "2"
+            ],
             "problemMatcher": []
         },
         {
@@ -29,6 +41,10 @@
                 "${relativeFile}", 
                 "test"
             ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
             "problemMatcher": []
         },
         {
