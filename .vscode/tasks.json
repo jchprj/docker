@@ -11,7 +11,7 @@
                 "/C",
                 "${workspaceFolder}/build.cmd",
                 "${relativeFile}", 
-                "1"
+                "latest"
             ],
             "group": {
                 "kind": "build",
@@ -26,8 +26,7 @@
             "args": [
                 "/C",
                 "${workspaceFolder}/build.cmd",
-                "${relativeFile}", 
-                "2"
+                "${relativeFile}"
             ],
             "problemMatcher": []
         },
