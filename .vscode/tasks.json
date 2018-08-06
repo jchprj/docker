@@ -4,6 +4,17 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "run image",
+            "type": "shell",
+            "command": "cmd",
+            "args": [
+                "/C",
+                "${workspaceFolder}/run.cmd",
+                "${relativeFile}"
+            ],
+            "problemMatcher": []
+        },
+        {
             "label": "build image",
             "type": "shell",
             "command": "cmd",

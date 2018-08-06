@@ -39,3 +39,34 @@ Equals to:
 # build.sh 
 
 Not available yet
+
+
+# run.cmd
+
+Windows only, it is designed for use with VS Code task
+
+## Parameters
+
+run.cmd \<relative path dockerfile\>
+
+## Examples
+
+`run.cmd test-alpine\alias.Dockerfile`  
+Equals to:  
+`docker run -it --rm --name test-alpine_alias test-alpine:alias`
+
+## VS Code task configuration
+
+```
+{
+            "label": "run image",
+            "type": "shell",
+            "command": "cmd",
+            "args": [
+                "/C",
+                "${workspaceFolder}/run.cmd",
+                "${relativeFile}"
+            ],
+            "problemMatcher": []
+}
+```
