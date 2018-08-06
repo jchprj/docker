@@ -13,7 +13,7 @@ RUN set -ex && \
     mysql_install_db --user=mysql --rpm && \
     (mysqld_safe &) && \
     sleep 2 && \
-    mysql -u root -e "GRANT ALL ON test.* TO 'test'@'%' IDENTIFIED BY '123456'; " && \
+    mysql -u root -e "GRANT ALL ON root.* TO 'root'@'%' IDENTIFIED BY '123456'; " && \
     killall -TERM mysqld
 # RUN apk add --update git
 
