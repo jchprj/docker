@@ -20,6 +20,10 @@ Equals to:
 Equals to:  
 `docker build -t test-alpine:latest -f test-alpine/alias.Dockerfile test-alpine`
 
+`build.cmd test-alpine\Dockerfile`  
+Equals to:  
+`docker build -t test-alpine:latest -f test-alpine/Dockerfile test-alpine`
+
 ## VS Code task configuration
 
 ```
@@ -54,6 +58,10 @@ run.cmd \<relative path dockerfile\>
 `run.cmd test-alpine\alias.Dockerfile`  
 Equals to:  
 `docker run -it --rm --name test-alpine_alias test-alpine:alias`
+
+`run.cmd test-alpine\Dockerfile`  
+Equals to:  
+`docker run -it --rm --name test-alpine_alias test-alpine:latest`
 
 ## VS Code task configuration
 
