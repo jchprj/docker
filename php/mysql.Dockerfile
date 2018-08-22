@@ -9,6 +9,7 @@ RUN apt-get update && \
     (mysqld_safe &) && \
     sleep 2 && \
     mysql -u root -e "GRANT ALL ON *.* TO 'root'@'%' IDENTIFIED BY '123456' WITH GRANT OPTION; " && \
+    mysql -u root -e "GRANT ALL ON *.* TO 'root'@'localhost' IDENTIFIED BY '123456' WITH GRANT OPTION; " && \
     killall -TERM mysqld && \
     docker-php-ext-install mysql
 # Expose default port
