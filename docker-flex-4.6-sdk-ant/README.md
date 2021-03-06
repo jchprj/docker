@@ -4,5 +4,10 @@ Compile Adobe Flash SWF using Adobe Flex SDK 4.6 and ant
 
 Example usage:
 ```
-docker run -v ${PWD}:/usr/src cccqcn/docker-flex-4.6-sdk-ant ant -f build.xml
+docker run -v ${PWD}:/usr/src --rm jchprj/docker-flex-4.6-sdk-ant ant -f build.xml
+```
+
+Compile a single file:
+```
+docker run -v ${PWD}:/flash -it --rm jchprj/docker-flex-4.6-sdk-ant mxmlc /flash/HelloWorld.as
 ```
