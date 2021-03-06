@@ -5,7 +5,7 @@ LABEL maintainer="Jue Chen<jchprj@gmail.com>"
 LABEL Description="This image is based on JDK-alpine, include Adobe Flex SDK 4.6, Ant, Git"
 
 ADD http://download.macromedia.com/pub/flex/sdk/flex_sdk_4.6.zip /flex/
-ADD http://apache.mirrors.tds.net//ant/binaries/apache-ant-1.10.5-bin.zip /ant/
+ADD http://apache.mirrors.tds.net/ant/binaries/apache-ant-1.10.9-bin.zip /ant/
 
 ENV PATH="/flex/bin:/ant/bin:${PATH}"
 
