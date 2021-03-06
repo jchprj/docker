@@ -4,18 +4,21 @@ FROM java:8u111-jdk-alpine
 LABEL maintainer="Jue Chen<jchprj@gmail.com>"
 LABEL Description="This image is based on JDK-alpine, include Adobe Flex SDK 4.6, Ant, Git"
 
-ADD http://download.macromedia.com/pub/flex/sdk/flex_sdk_4.6.zip /flex/
-ADD http://apache.mirrors.tds.net/ant/binaries/apache-ant-1.10.9-bin.zip /ant/
+ARG ANT_VER=1.10.9
+ARG FLEX_VER=4.6
+
+ADD http://download.macromedia.com/pub/flex/sdk/flex_sdk_$FLEX_VER.zip /flex/
+ADD http://apache.mirrors.tds.net/ant/binaries/apache-ant-$ANT_VER-bin.zip /ant/
 
 ENV PATH="/flex/bin:/ant/bin:${PATH}"
 
 RUN \
-    unzip /flex/flex_sdk_4.6.zip -d /flex && \
-    rm -f /flex/flex_sdk_4.6.zip && \
-    unzip /ant/apache-ant-1.10.5-bin.zip -d /ant && \
-    rm -f /ant/apache-ant-1.10.5-bin.zip && \
-    mv /ant/apache-ant-1.10.5/* /ant && \
-    rmdir /ant/apache-ant-1.10.5 && \
+    unzip /flex/flex_sdk_$FLEX_VER.zip -d /flex && \
+    rm -f /flex/flex_sdk_$FLEX_VER.zip && \
+    unzip /ant/apache-ant-$ANT_VER-bin.zip -d /ant && \
+    rm -f /ant/apache-ant-$ANT_VER-bin.zip && \
+    mv /ant/apache-ant-$ANT_VER/* /ant && \
+    rmdir /ant/apache-ant-$ANT_VER && \
     rm /ant/manual -rf && \
     apk add --update git
 
